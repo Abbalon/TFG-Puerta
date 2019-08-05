@@ -1,0 +1,1 @@
+/* Este bloque contendrá el código que gestionará del módulo XBEE */
