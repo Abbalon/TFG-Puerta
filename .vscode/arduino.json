@@ -1,0 +1,6 @@
+{
+    "programmer": "AVRISP mkII",
+    "board": "arduino:avr:leonardo",
+    "port": "/dev/ttyACM0",
+    "sketch": "Puerta.ino"
+}
