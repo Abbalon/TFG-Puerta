@@ -5,20 +5,27 @@
 S2C::S2C() {}
 
 /** Inicializamos la antena con la referencia de la antena y su coordinador de red */
-S2C::S2C(XBee *_antena, XBeeAddress64 *_coodinador) {
-    xbee = *_antena;
-    coodinador = *_coodinador;
+S2C::S2C(const XBee &_antena, const XBeeAddress64 &_coodinador)
+{
+    xbee = _antena;
+    coodinador = _coodinador;
+}
+
+/** Transformará el String del mensaje a un formato que se pueda enviar
+ * por la antena ZigBee
+*/
+uint8_t S2C::serializar(String _mensaje)
+{
+    //TODO
+    return sizeof(_mensaje);
 }
 
 /** Mandará el mensaje a receptor indicado */
-bool S2C::mandarMensaje(XBeeAddress64 *_destino, String _mensaje)
+bool S2C::mandarMensaje(const XBeeAddress64 &_destino, String _mensaje)
 {
     bool exito = false;
-    serializar(mensaje);
-    ZBTxRequest zbTx = ZBTxRequest(destino, value, sizePayload);
-
-    //uint8_t payload[] = { 'H', 'o', 'l', 'a', ' ', 'P', 'C' };
-    //ZBTxRequest zbTx = ZBTxRequest(destino, payload, sizeof(payload));
+    uint8_t sizePayload = serializar(_mensaje);
+    zbTx = ZBTxRequest(_destino, msg, sizePayload);
 
     xbee.send(zbTx);
 
@@ -43,5 +50,5 @@ bool S2C::mandarMensaje(XBeeAddress64 *_destino, String _mensaje)
 /** Mandará el mensaje al coordinador configurado */
 bool S2C::mandarMensaje(String _mensaje)
 {
-    return mandarMensaje(&coordinador, _mensaje);
+    return mandarMensaje(coordinador, _mensaje);
 }

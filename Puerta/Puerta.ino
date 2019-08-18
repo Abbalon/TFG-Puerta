@@ -1,25 +1,10 @@
-/* Blink
-
-  Turns an LED on for one second, then off for one second, repeatedly.
-
-  Most Arduinos have an on-board LED you can control. On the UNO, MEGA and ZERO
-  it is attached to digital pin 13, on MKR1000 on pin 6. LED_BUILTIN is set to
-  the correct LED pin independent of which board is used.
-  If you want to know what pin the on-board LED is connected to on your Arduino
-  model, check the Technical Specs of your board at:
-  https://www.arduino.cc/en/Main/Products
-
-  modified 8 May 2014
-  by Scott Fitzgerald
-  modified 2 Sep 2016
-  by Arturo Guadalupi
-  modified 8 Sep 2016
-  by Colby Newman
-
-  This example code is in the public domain.
-
-  http://www.arduino.cc/en/Tutorial/Blink
-*/
+/** Sketch del sistema de control de acceso.
+ * A traves de un lector de targetas RFID, capturará quien quiere acceder al recinto
+ * enviará el código al servidor, que comprobará su autenticidad y los permisos que tenga
+ * asociados y devolverá la respuesta adecuada. 
+ * Si la respuesta recibida es satisfactoria, el sistema actuará sobre la cerradura electrónica,
+ * ordenando la apertura, en otro caso, no realizará ninguna acción.
+ */
 
 #include "puerta.h"
 #include "servo_puerta.h"

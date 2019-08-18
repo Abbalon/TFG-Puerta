@@ -3,8 +3,8 @@
 */
 #ifndef servoPuerta_h
 #define servoPuerta_h
-#include <Servo.h>
 #include <Arduino.h>
+#include <Servo.h>
 
 // Puerto del servo
 const int SERVO_PORT = 3;
@@ -14,21 +14,21 @@ const int CERRADO = 15;
 
 class SG90
 {
-  public:
-    SG90();
-    
-    SG90(Servo &_sg90);
+public:
+  SG90();
 
-    SG90(int port, Servo &_sg90);
+  SG90(const Servo &_sg90);
 
-    void abrir();
+  SG90(int port, const Servo &_sg90);
 
-    void cerrar();
+  void abrir();
 
-    int getAngle();
+  void cerrar();
 
-  private:
-    Servo sg90;
-    int angle;
+  int getAngle();
+
+private:
+  Servo sg90;
+  int angle;
 };
 #endif
