@@ -8,15 +8,15 @@
 
 SG90::SG90() {}
 
-SG90::SG90(Servo *_sg90)
+SG90::SG90(Servo &_sg90)
 {
-  sg90 = *_sg90;
+  sg90 = &_sg90;
   sg90.attach(SERVO_PORT);
 }
 
-SG90::SG90(int port, Servo *_sg90)
+SG90::SG90(int port, Servo &_sg90)
 {
-  sg90 = *_sg90;
+  sg90 = &_sg90;
   sg90.attach(port);
 }
 

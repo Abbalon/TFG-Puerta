@@ -30,7 +30,7 @@ Servo servo;
 // the setup function runs once when you press reset or power the board
 void setup()
 {
-  cerradura = SG90(&servo);
+  cerradura = SG90(servo);
   Serial.println(cerradura.getAngle());
   //Configuración del puerto serial
   Serial.begin(BAUDRATE);

@@ -17,9 +17,9 @@ class SG90
   public:
     SG90();
     
-    SG90(Servo *_sg90);
+    SG90(Servo &_sg90);
 
-    SG90(int port, Servo *_sg90);
+    SG90(int port, Servo &_sg90);
 
     void abrir();
 

@@ -20,16 +20,16 @@ public:
     S2C();
 
     /** Inicializamos la antena con la referencia de la antena y su coordinador de red */
-    S2C(XBee *_antena, XBeeAddress64 *_coodinador);
+    S2C(XBee &_antena, XBeeAddress64 &_coodinador);
 
     /** Mandará el mensaje a receptor indicado */
-    bool mandarMensaje(XBeeAddress64 *_destino, String _mensaje);
+    bool mandarMensaje(XBeeAddress64 &_destino, String _mensaje);
 
     /** Mandará el mensaje al coordinador configurado */
     bool mandarMensaje(String _mensaje);
 
 private:
-    XBee xbee;
+    XBee xbee = XBee();
     //Objetos para recibir datos
     XBeeResponse response = XBeeResponse();
     ZBRxResponse rx = ZBRxResponse();

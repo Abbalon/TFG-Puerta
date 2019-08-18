@@ -1,6 +1,6 @@
 /* Este bloque contendrá el código que gestionará del módulo XBEE */
 
-#include "XBee.h"
+#include "xbee_puerta.h"
 
 S2C::S2C() {}
 
@@ -43,5 +43,5 @@ bool S2C::mandarMensaje(XBeeAddress64 *_destino, String _mensaje)
 /** Mandará el mensaje al coordinador configurado */
 bool S2C::mandarMensaje(String _mensaje)
 {
-    return mandarMensaje(coordinador, _mensaje);
+    return mandarMensaje(&coordinador, _mensaje);
 }
