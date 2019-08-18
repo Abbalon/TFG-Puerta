@@ -43,7 +43,7 @@ private:
     ZBTxRequest zbTx = ZBTxRequest(coordinador, payload, sizeof(payload));
 
     //Guarda los datos recibidos
-    uint8_t *value;#include <Printers.h>
+    uint8_t *value;
     uint8_t sizePayload = 0;
 
     //Estado del canal
