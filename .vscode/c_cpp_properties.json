@@ -3,9 +3,10 @@
         {
             "name": "Linux",
             "includePath": [
-                "/opt/arduino-1.8.9/tools/**",
+                "/opt/arduino-1.8.9/**",
+                "/home/montbs/Arduino/TFG-Puerta/Puerta/**",
                 "/opt/arduino-1.8.9/hardware/arduino/avr/**",
-                "/home/montbs/Arduino/libraries/**"
+                "/opt/arduino-1.8.9/tools/**"
             ],
             "forcedInclude": [
                 "/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/Arduino.h"
